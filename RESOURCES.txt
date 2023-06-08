@@ -1,0 +1,10 @@
+#RESOURCES
+
+Google Developers :
+
+https://developers.google.com/edu/python
+
+Python Docs :
+
+https://docs.python.org/3/
+
