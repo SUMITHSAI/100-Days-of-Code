@@ -1,8 +1,9 @@
 #caesar-cipher
 
 #SUMITH SAI KORABOINA
-
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+#INSTRUCTOR APPROACH
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 def caesar(start_text, shift_amount, cipher_direction):
   end_text = ""
@@ -47,3 +48,36 @@ while not should_end:
   if restart == "no":
     should_end = True
     print("Goodbye")
+
+
+#MY APPROACH
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+def caesar(text,shift_amount,direction):
+    end_text=""
+    if direction=="decode":
+        shift_amount *=-1
+    for char in text:
+        position=alphabet.index(char)
+        new_position=position+shift_amount
+        letter=alphabet[new_position]
+        end_text+=letter
+    print(f"The {direction}d text is {end_text}")
+    
+    
+    
+text=input("Enter the text\n")
+shift_amount=int(input("Enter the shift key\n"))
+direction=input("You want to encode or decode ?\n")
+caesar(text,shift_amount,direction)
+end=False
+while not end:
+    repeat=input("Would u like to continue, if yes write yes, else write no\n")
+    if repeat=="yes":
+        text=input("Enter the text\n")
+        shift_amount=int(input("Enter the shift key\n"))
+        direction=input("You want to encode or decode ?\n")
+        caesar(text,shift_amount,direction)
+    else:
+        end=True
+        print("Good bye")
